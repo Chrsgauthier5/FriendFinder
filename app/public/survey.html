@@ -3,13 +3,23 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Reservation Page</title>
-
-  <!-- Latest compiled and minified CSS & JS -->
+  <title>Survey Page</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <!--Favicon-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!--Bootstrap CDN version 4.0-->
+
+  <script src="https://code.jquery.com/jquery.js"></script> <!-- Jquery -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+    crossorigin="anonymous">
+  <!--Font Awesome-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+
 
 </head>
 
@@ -17,17 +27,13 @@
 
   <div class="container">
 
-    <div class="jumbotron">
+    <div class="jumbotron p-3 mb-2 bg-danger text-white ">
       <h1 class="text-center">
-        <span class="fa fa-fire"></span> Hot Restaurant</h1>
+        <i class="fas fa-pencil-alt"></i> Survey Questions</h1>
       <hr>
-      <h2 class="text-center">Make your reservation</h2>
+      <h2 class="text-center"> <i class="far fa-kiss-wink-heart"></i> Fill in and Answer the below questions! <i class="far fa-kiss-wink-heart"></i></h2>
       <br>
       <div class="text-center">
-        <a href="/tables">
-          <button class="btn btn-lg btn-primary">
-            <span class="fa fa-list-alt"></span> View Tables</button>
-        </a>
         <a href="/">
           <button class="btn btn-lg btn-default">
             <span class="fa fa-home"></span>
@@ -37,29 +43,157 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <!-- Reservation Page -->
+        <!-- Friend
+           Page -->
         <div class="card">
           <div class="card-header">
-            Table Reservation
+            About You
           </div>
           <div class="card-body">
             <form role="form">
               <div class="form-group">
-                <label for="reserve-name">Name</label>
-                <input type="text" class="form-control" id="reserve-name">
+                <label for="reserve-name">Name (Required)</label>
+                <input type="text" class="form-control" id="survey-name" required>
               </div>
               <div class="form-group">
-                <label for="reserve-phone">Phone Number</label>
-                <input type="text" class="form-control" id="reserve-phone">
+                <label for="reserve-phone">Link to Image of You (Required)</label>
+                <input type="url" class="form-control" id="survey-pic" required>
               </div>
-              <div class="form-group">
-                <label for="reserve-email">Email</label>
-                <input type="text" class="form-control" id="reserve-email">
-              </div>
-              <div class="form-group">
-                <label for="reserve-unique-id">Unique ID</label>
-                <input type="text" class="form-control" id="reserve-unique-id">
-              </div>
+              <hr>
+              <hr>
+              <!------------------------------------ Question 1 ------------------------------------------------>
+              <h3><strong>Question 1</strong></h3>
+              <h5><i>You would rather be happy with your job at the sacrifice of making less money</i></h5>
+              <select class='chosen-select' id='q1' placeholder='Select an option'>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <br>
+              <!------------------------------------ Question 2 ------------------------------------------------>
+              <h3><strong>Question 2</strong></h3>
+              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
+              <select class='chosen-select' id='q2' placeholder='Select an option'>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <br>
+              <!------------------------------------ Question 3 ------------------------------------------------>
+              <h3><strong>Question 3</strong></h3>
+              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
+              <select class='chosen-select' id='q3' placeholder='Select an option'>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <br>
+              <!------------------------------------ Question 4 ------------------------------------------------>
+              <h3><strong>Question 4</strong></h3>
+              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
+              <select class='chosen-select' id='q4' placeholder='Select an option'>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <br>
+              <!------------------------------------ Question 5 ------------------------------------------------>
+              <h3><strong>Question 5</strong></h3>
+              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
+              <select class='chosen-select' id='q5' placeholder='Select an option'>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <br>
+              <!------------------------------------ Question 6 ------------------------------------------------>
+              <h3><strong>Question 6</strong></h3>
+              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
+              <select class='chosen-select' id='q6' placeholder='Select an option'>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <br>
+              <!------------------------------------ Question 7 ------------------------------------------------>
+              <h3><strong>Question 7</strong></h3>
+              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
+              <select class='chosen-select' id='q7' placeholder='Select an option'>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <br>
+              <!------------------------------------ Question 8 ------------------------------------------------>
+              <h3><strong>Question 8</strong></h3>
+              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
+              <select class='chosen-select' id='q8' placeholder='Select an option'>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <br>
+              <!------------------------------------ Question 9 ------------------------------------------------>
+              <h3><strong>Question 9</strong></h3>
+              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
+              <select class='chosen-select' id='q9' placeholder='Select an option'>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <br>
+              <!------------------------------------ Question 10 ------------------------------------------------>
+              <h3><strong>Question 10</strong></h3>
+              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
+              <select class='chosen-select' id='q10' placeholder='Select an option'>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <br>
+              <!------------------------------------ End of Questions ------------------------------------------------>
+              <hr>
+              <br>
               <button type="submit" class="btn btn-primary submit">Submit</button>
             </form>
           </div>
@@ -71,53 +205,79 @@
     <footer class="footer">
       <div class="container">
         <p>
-          <a href="/api/tables">API Table Link</a> |
-          <a href="/api/waitlist">API Wait List</a>
+          <a href="/api/friends" target='_blank'> API Friends </a> |
+          <a href="https://github.com/Chrsgauthier5/FriendFinder" target='_blank'> GitHub Repo </a>
       </div>
     </footer>
 
   </div>
 
+  <script type="text/javascript">
+    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+    $(".submit").on("click", function (event) {
+      event.preventDefault();
+
+      // Here we grab the form elements
+      var newFriend = {
+        friendName: $("#survey-name").val().trim(),
+        friendPic: $("#survey-pic").val().trim(),
+        Question1: $("#q1").val().trim(),
+        Question2: $("#q2").val().trim()
+        Question3: $("#q3").val().trim()
+        Question4: $("#q4").val().trim()
+        Question5: $("#q5").val().trim()
+        Question6: $("#q6").val().trim()
+        Question7: $("#q7").val().trim()
+        Question8: $("#q8").val().trim()
+        Question9: $("#q9").val().trim()
+        Question10: $("#q10").val().trim()
+      };
+
+      console.log(newFriend);
+
+      // This line is the magic. It"s very similar to the standard ajax function we used.
+      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+      // depending on if a tables is available or not.
+
+      $.post("/api/friends", newFriend, function (data) {
+
+        // If a table is available... tell user they are booked.
+        if (data) {
+          alert("Survey Submitted!");
+        }
+
+        // If a table is available... tell user they on the waiting list.
+        else {
+          alert("Please fill out all applicable fields");
+        }
+
+        // Clear the form when submitting
+        $("#survey-name").val('')
+        $("#survey-pic").val('')
+        $("#q1").val('')
+        $("#q2").val('')
+        $("#q3").val('')
+        $("#q4").val('')
+        $("#q5").val('')
+        $("#q6").val('')
+        $("#q7").val('')
+        $("#q8").val('')
+        $("#q9").val('')
+        $("#q10").val('')
+      };
+
+    });
+
+    });
+
+  </script>
+
+
 </body>
 
 </html>
-
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
-<script type="text/javascript">
-  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-
-  $(".submit").on("click", function(event) {
-    event.preventDefault();
-
-    // Here we grab the form elements
-    var newReservation = {
-      customerName: $("#reserve-name").val().trim(),
-      phoneNumber: $("#reserve-phone").val().trim(),
-      customerEmail: $("#reserve-email").val().trim(),
-      customerID: $("#reserve-unique-id").val().trim()
-    };
-
-    console.log(newReservation);
-
-    // This line is the magic. It"s very similar to the standard ajax function we used.
-    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a tables is available or not.
-
-    $.post("/api/friends", newReservation,
-      function(data) {
-
-        // Clear the form when submitting
-        $("#reserve-name").val("");
-        $("#reserve-phone").val("");
-        $("#reserve-email").val("");
-        $("#reserve-unique-id").val("");
-
-      });
-
-  });
-
-</script>
