@@ -8,7 +8,8 @@
   <!--Favicon-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <!--Bootstrap CDN version 4.0-->
-
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery.js"></script> <!-- Jquery -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -31,7 +32,7 @@
       <h1 class="text-center">
         <i class="fas fa-pencil-alt"></i> Survey Questions</h1>
       <hr>
-      <h2 class="text-center"> <i class="far fa-kiss-wink-heart"></i> Fill in and Answer the below questions! <i class="far fa-kiss-wink-heart"></i></h2>
+      <h2 class="text-center"> <i class="far fa-kiss-wink-heart"></i> Fill in and Answer the Questions Below! <i class="far fa-kiss-wink-heart"></i></h2>
       <br>
       <div class="text-center">
         <a href="/">
@@ -57,14 +58,14 @@
               </div>
               <div class="form-group">
                 <label for="reserve-phone">Link to Image of You (Required)</label>
-                <input type="url" class="form-control" id="survey-pic" required>
+                <input type="text" class="form-control" id="survey-pic" required>
               </div>
               <hr>
               <hr>
               <!------------------------------------ Question 1 ------------------------------------------------>
               <h3><strong>Question 1</strong></h3>
               <h5><i>You would rather be happy with your job at the sacrifice of making less money</i></h5>
-              <select class='chosen-select' id='q1' placeholder='Select an option'>
+              <select class='chosen-select' id='q1'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -77,7 +78,7 @@
               <!------------------------------------ Question 2 ------------------------------------------------>
               <h3><strong>Question 2</strong></h3>
               <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
-              <select class='chosen-select' id='q2' placeholder='Select an option'>
+              <select class='chosen-select' id='q2'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -89,8 +90,8 @@
               <br>
               <!------------------------------------ Question 3 ------------------------------------------------>
               <h3><strong>Question 3</strong></h3>
-              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
-              <select class='chosen-select' id='q3' placeholder='Select an option'>
+              <h5><i>Money is better spent on experiences than physical possessions</i></h5>
+              <select class='chosen-select' id='q3'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -102,8 +103,8 @@
               <br>
               <!------------------------------------ Question 4 ------------------------------------------------>
               <h3><strong>Question 4</strong></h3>
-              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
-              <select class='chosen-select' id='q4' placeholder='Select an option'>
+              <h5><i>What others think of you is important to you</i></h5>
+              <select class='chosen-select' id='q4'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -115,8 +116,8 @@
               <br>
               <!------------------------------------ Question 5 ------------------------------------------------>
               <h3><strong>Question 5</strong></h3>
-              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
-              <select class='chosen-select' id='q5' placeholder='Select an option'>
+              <h5><i>Physical appearance is important to you when looking for a partner</i></h5>
+              <select class='chosen-select' id='q5'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -128,8 +129,8 @@
               <br>
               <!------------------------------------ Question 6 ------------------------------------------------>
               <h3><strong>Question 6</strong></h3>
-              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
-              <select class='chosen-select' id='q6' placeholder='Select an option'>
+              <h5><i>You enjoy trying the latest and greatest</i></h5>
+              <select class='chosen-select' id='q6'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -141,8 +142,8 @@
               <br>
               <!------------------------------------ Question 7 ------------------------------------------------>
               <h3><strong>Question 7</strong></h3>
-              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
-              <select class='chosen-select' id='q7' placeholder='Select an option'>
+              <h5><i>You are uncomfortable when introduced to a large group of people of new people</i></h5>
+              <select class='chosen-select' id='q7'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -154,8 +155,8 @@
               <br>
               <!------------------------------------ Question 8 ------------------------------------------------>
               <h3><strong>Question 8</strong></h3>
-              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
-              <select class='chosen-select' id='q8' placeholder='Select an option'>
+              <h5><i>You prefer hanging out with a close friend as opposed to going to a large party</i></h5>
+              <select class='chosen-select' id='q8'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -167,8 +168,8 @@
               <br>
               <!------------------------------------ Question 9 ------------------------------------------------>
               <h3><strong>Question 9</strong></h3>
-              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
-              <select class='chosen-select' id='q9' placeholder='Select an option'>
+              <h5><i>You consider yourself an introvert</i></h5>
+              <select class='chosen-select' id='q9'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -180,8 +181,8 @@
               <br>
               <!------------------------------------ Question 10 ------------------------------------------------>
               <h3><strong>Question 10</strong></h3>
-              <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
-              <select class='chosen-select' id='q10' placeholder='Select an option'>
+              <h5><i>Whenever you go to your favorite restaurant you order the same thing everytime</i></h5>
+              <select class='chosen-select' id='q10'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -213,50 +214,50 @@
   </div>
 
   <script type="text/javascript">
-    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
     $(".submit").on("click", function (event) {
       event.preventDefault();
+      console.log('hello');
 
-      // Here we grab the form elements
-      var newFriend = {
-        friendName: $("#survey-name").val().trim(),
-        friendPic: $("#survey-pic").val().trim(),
-        Question1: $("#q1").val().trim(),
-        Question2: $("#q2").val().trim()
-        Question3: $("#q3").val().trim()
-        Question4: $("#q4").val().trim()
-        Question5: $("#q5").val().trim()
-        Question6: $("#q6").val().trim()
-        Question7: $("#q7").val().trim()
-        Question8: $("#q8").val().trim()
-        Question9: $("#q9").val().trim()
-        Question10: $("#q10").val().trim()
-      };
+      function validSubmission() {
+        var isValid = true;
+        console.log('hello');
+        $(".form-control").each(function () {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
 
-      console.log(newFriend);
+        $(".chosen-select").each(function () { // go through each question - if empty or choose here(default value) reject
 
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
+          if ($(this).val() === "" || "Choose here") {
+            isValid = false;
+          }
+        });
+        return isValid;
+      }
 
-      $.post("/api/friends", newFriend, function (data) {
+      // If all required fields are filled
+      if (validSubmission()) {
+        // Create an object for the user"s data
+        var newFriend = {
+          name: $("#survey-name").val().trim(),
+          photo: $("#survey-pic").val().trim(),
+          scores: [
+            $("#q1").val().trim(),
+            $("#q2").val().trim(),
+            $("#q3").val().trim(),
+            $("#q4").val().trim(),
+            $("#q5").val().trim(),
+            $("#q6").val().trim(),
+            $("#q7").val().trim(),
+            $("#q8").val().trim(),
+            $("#q9").val().trim(),
+            $("#q10").val().trim()
+          ]
+        };
 
-        // If a table is available... tell user they are booked.
-        if (data) {
-          alert("Survey Submitted!");
-        }
-
-        // If a table is available... tell user they on the waiting list.
-        else {
-          alert("Please fill out all applicable fields");
-        }
-
-        // Clear the form when submitting
+                // Clear the form when submitting
         $("#survey-name").val('')
         $("#survey-pic").val('')
         $("#q1").val('')
@@ -269,11 +270,111 @@
         $("#q8").val('')
         $("#q9").val('')
         $("#q10").val('')
-      };
 
+        // AJAX post the data to the friends API.
+        $.post("/api/friends", newFriend, function (data) {
+
+          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#match-name").text(data.name);
+          $("#match-img").attr("src", data.photo);
+
+          // Show the modal with the best match
+          $("#results-modal").modal("toggle");
+
+        });
+      } else {
+        alert("Please fill out all fields before submitting!");
+      }
     });
 
-    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // Here we grab the form elements
+    //   var newFriend = {
+    //     friendName: $("#survey-name").val().trim(),
+    //     friendPic: $("#survey-pic").val().trim(),
+    //     Question1: $("#q1").val().trim(),
+    //     Question2: $("#q2").val().trim(),
+    //     Question3: $("#q3").val().trim(),
+    //     Question4: $("#q4").val().trim(),
+    //     Question5: $("#q5").val().trim(),
+    //     Question6: $("#q6").val().trim(),
+    //     Question7: $("#q7").val().trim(),
+    //     Question8: $("#q8").val().trim(),
+    //     Question9: $("#q9").val().trim(),
+    //     Question10: $("#q10").val().trim()
+    //   };
+
+    //   console.log(newFriend);
+
+    //   // This line is the magic. It"s very similar to the standard ajax function we used.
+    //   // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+    //   // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+    //   // depending on if a tables is available or not.
+
+    //   $.post("/api/friends", newFriend, function (data) {
+
+    //     // If a table is available... tell user they are booked.
+    //     if (data) {
+    //       alert("Survey Submitted!");
+    //     }
+
+    //     // If a table is available... tell user they on the waiting list.
+    //     else {
+    //       alert("Please fill out all applicable fields");
+    //     }
+
+    //     // Clear the form when submitting
+    //     $("#survey-name").val('')
+    //     $("#survey-pic").val('')
+    //     $("#q1").val('')
+    //     $("#q2").val('')
+    //     $("#q3").val('')
+    //     $("#q4").val('')
+    //     $("#q5").val('')
+    //     $("#q6").val('')
+    //     $("#q7").val('')
+    //     $("#q8").val('')
+    //     $("#q9").val('')
+    //     $("#q10").val('')
+
+    //   });
+
+    // });
+
+
 
   </script>
 
