@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Survey Page</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="icon" href="/app/public/favicon.png" type="image/png" />
   <!--Favicon-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <!--Bootstrap CDN version 4.0-->
@@ -54,11 +54,11 @@
             <form role="form">
               <div class="form-group">
                 <label for="reserve-name">Name (Required)</label>
-                <input type="text" class="form-control" id="survey-name" required>
+                <input type="text" class="form-control" id="survey-name" placeholder="name" required>
               </div>
               <div class="form-group">
                 <label for="reserve-phone">Link to Image of You (Required)</label>
-                <input type="text" class="form-control" id="survey-pic" required>
+                <input type="text" class="form-control" id="survey-pic" placeholder="https://yourPicture.jpg" required>
               </div>
               <hr>
               <hr>
@@ -181,7 +181,7 @@
               <br>
               <!------------------------------------ Question 10 ------------------------------------------------>
               <h3><strong>Question 10</strong></h3>
-              <h5><i>Whenever you go to your favorite restaurant you order the same thing everytime</i></h5>
+              <h5><i>Whenever you go to your favorite restaurant you always order the same thing</i></h5>
               <select class='chosen-select' id='q10'>
                 <option value="" selected disabled hidden>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
@@ -219,7 +219,7 @@
       event.preventDefault();
       console.log('hello');
 
-      function validSubmission() {
+      function formValidate() {
         var isValid = true;
         console.log('hello');
         $(".form-control").each(function () {
@@ -230,7 +230,7 @@
 
         $(".chosen-select").each(function () { // go through each question - if empty or choose here(default value) reject
 
-          if ($(this).val() === "" || "Choose here") {
+          if ($(this).val() === "Choose here") {
             isValid = false;
           }
         });
@@ -238,42 +238,28 @@
       }
 
       // If all required fields are filled
-      if (validSubmission()) {
+      if (formValidate()) {
         // Create an object for the user"s data
         var newFriend = {
           name: $("#survey-name").val().trim(),
           photo: $("#survey-pic").val().trim(),
           scores: [
-            $("#q1").val().trim(),
-            $("#q2").val().trim(),
-            $("#q3").val().trim(),
-            $("#q4").val().trim(),
-            $("#q5").val().trim(),
-            $("#q6").val().trim(),
-            $("#q7").val().trim(),
-            $("#q8").val().trim(),
-            $("#q9").val().trim(),
-            $("#q10").val().trim()
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
           ]
         };
-
-                // Clear the form when submitting
-        $("#survey-name").val('')
-        $("#survey-pic").val('')
-        $("#q1").val('')
-        $("#q2").val('')
-        $("#q3").val('')
-        $("#q4").val('')
-        $("#q5").val('')
-        $("#q6").val('')
-        $("#q7").val('')
-        $("#q8").val('')
-        $("#q9").val('')
-        $("#q10").val('')
-
+        alert('You successfully submitted your survey!');
         // AJAX post the data to the friends API.
         $.post("/api/friends", newFriend, function (data) {
-
+          console.log(data);
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           $("#match-name").text(data.name);
           $("#match-img").attr("src", data.photo);
@@ -285,95 +271,22 @@
       } else {
         alert("Please fill out all fields before submitting!");
       }
+            $("#survey-name").val('');
+            $("#survey-pic").val('')
+            $("#q1").val('');
+            $("#q2").val('');
+            $("#q3").val('');
+            $("#q4").val('');
+            $("#q5").val('');
+            $("#q6").val('');
+            $("#q7").val('');
+            $("#q8").val('');
+            $("#q9").val('');
+            $("#q10").val('');
+
+
+
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      // Here we grab the form elements
-    //   var newFriend = {
-    //     friendName: $("#survey-name").val().trim(),
-    //     friendPic: $("#survey-pic").val().trim(),
-    //     Question1: $("#q1").val().trim(),
-    //     Question2: $("#q2").val().trim(),
-    //     Question3: $("#q3").val().trim(),
-    //     Question4: $("#q4").val().trim(),
-    //     Question5: $("#q5").val().trim(),
-    //     Question6: $("#q6").val().trim(),
-    //     Question7: $("#q7").val().trim(),
-    //     Question8: $("#q8").val().trim(),
-    //     Question9: $("#q9").val().trim(),
-    //     Question10: $("#q10").val().trim()
-    //   };
-
-    //   console.log(newFriend);
-
-    //   // This line is the magic. It"s very similar to the standard ajax function we used.
-    //   // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    //   // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    //   // depending on if a tables is available or not.
-
-    //   $.post("/api/friends", newFriend, function (data) {
-
-    //     // If a table is available... tell user they are booked.
-    //     if (data) {
-    //       alert("Survey Submitted!");
-    //     }
-
-    //     // If a table is available... tell user they on the waiting list.
-    //     else {
-    //       alert("Please fill out all applicable fields");
-    //     }
-
-    //     // Clear the form when submitting
-    //     $("#survey-name").val('')
-    //     $("#survey-pic").val('')
-    //     $("#q1").val('')
-    //     $("#q2").val('')
-    //     $("#q3").val('')
-    //     $("#q4").val('')
-    //     $("#q5").val('')
-    //     $("#q6").val('')
-    //     $("#q7").val('')
-    //     $("#q8").val('')
-    //     $("#q9").val('')
-    //     $("#q10").val('')
-
-    //   });
-
-    // });
-
 
 
   </script>

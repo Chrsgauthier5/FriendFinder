@@ -1,44 +1,34 @@
 var express = require("express");
 var path = require("path");
 var app = express();
+var bodyParser = require("body-parser");
 //Server port: 8080
-const PORT =  process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 //Working directory
 const DIR = __dirname;
 
-
-//Use statements
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.join(DIR, 'app/public')))
 
+// //Use statements
+// // parse application/x-www-form-urlencoded
+// app.use(bodyParser.urlencoded({ extended: false }))
 
- //On asset request, send asset file
-app.get("/assets/:assetType/:asset", (req, res) => {
-    // Keep assets in type speceific directories, named after the file extension of
-    // its child assets. Then, assetReqType can be used to refer to the asset library,
-    // as well as be used to concatinate the filename. 
+// // parse application/json
+// app.use(bodyParser.json())
 
-    // Pull the requested asset type from URL
-    var assetReqType = req.params.assetType;
-    // Pull the requested asset from URL
-    var assetReq = req.params.asset;
-    // Create the requested asset filename
-    var assetReqFilename = assetReq + "." + assetReqType;
-    // Create the absolute filepath of the requested asset
-    var assetPath = path.join(DIR, "client", "assets", assetReqType, assetReqFilename);
-    // Send the asset that has been 
-    res.sendFile(assetPath);
-    
-    console.log(`Asset requested [ ${assetReqType}, ${assetReq} ]`);
-    console.log(assetPath)
-});
-
+// app.use(function (req, res) {
+//     res.setHeader('Content-Type', 'text/plain')
+//     res.write('you posted:\n')
+//     res.end(JSON.stringify(req.body, null, 2))
+// })
 
 require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes')(app);  // taking routes from htmlRoutes file, and passing express as the argument app
 
 
-app.listen(PORT, function(err){
-    if(err)throw(err);
+app.listen(PORT, function (err) {
+    if (err) throw (err);
     console.log("Server listening on port " + PORT);
 });
