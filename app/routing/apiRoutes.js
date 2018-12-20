@@ -12,7 +12,7 @@ module.exports = function (app) {
 
         var bestMatch = {
             name: "",
-            picture: "",
+            photo: "",
             friendDifference: 100
         };
 
@@ -24,15 +24,17 @@ module.exports = function (app) {
         for (i = 0; i < friendData.length; i ++){
             var scoreDiff = 0;
 
-            for (j = 0; j < friendData[i].scores[j]; j++){
+            for (j = 0; j < friendData[i].scores.length; j++){
                 scoreDiff += Math.abs(parseInt(newScores[j]) - parseInt(friendData[i].scores[j]));
-
+            }
+                
                 if (bestMatch.friendDifference > scoreDiff){
                     bestMatch.name = friendData[i].name;
                     bestMatch.picture = friendData[i].photo;
                     bestMatch.friendDifference = scoreDiff;
+                    console.log(bestMatch)
                 }
-            }
+            
         }
 
 

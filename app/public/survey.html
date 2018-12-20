@@ -20,7 +20,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
-
+<style>
+          img {
+            margin-left: 32px;
+            width:400px;
+            height:280px;
+        }
+</style>
 
 </head>
 
@@ -66,7 +72,7 @@
               <h3><strong>Question 1</strong></h3>
               <h5><i>You would rather be happy with your job at the sacrifice of making less money</i></h5>
               <select class='chosen-select' id='q1'>
-                <option value="" selected disabled hidden>Choose here</option>
+                <option selected>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -79,7 +85,7 @@
               <h3><strong>Question 2</strong></h3>
               <h5><i>You sacrifice comfort and pleasures today for success in the future</i></h5>
               <select class='chosen-select' id='q2'>
-                <option value="" selected disabled hidden>Choose here</option>
+                <option selected>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -92,7 +98,7 @@
               <h3><strong>Question 3</strong></h3>
               <h5><i>Money is better spent on experiences than physical possessions</i></h5>
               <select class='chosen-select' id='q3'>
-                <option value="" selected disabled hidden>Choose here</option>
+                <option selected>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -105,7 +111,7 @@
               <h3><strong>Question 4</strong></h3>
               <h5><i>What others think of you is important to you</i></h5>
               <select class='chosen-select' id='q4'>
-                <option value="" selected disabled hidden>Choose here</option>
+                <option selected>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -118,7 +124,7 @@
               <h3><strong>Question 5</strong></h3>
               <h5><i>Physical appearance is important to you when looking for a partner</i></h5>
               <select class='chosen-select' id='q5'>
-                <option value="" selected disabled hidden>Choose here</option>
+                <option selected>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -131,7 +137,7 @@
               <h3><strong>Question 6</strong></h3>
               <h5><i>You enjoy trying the latest and greatest</i></h5>
               <select class='chosen-select' id='q6'>
-                <option value="" selected disabled hidden>Choose here</option>
+                <option selected>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -144,7 +150,7 @@
               <h3><strong>Question 7</strong></h3>
               <h5><i>You are uncomfortable when introduced to a large group of people of new people</i></h5>
               <select class='chosen-select' id='q7'>
-                <option value="" selected disabled hidden>Choose here</option>
+                <option selected>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -157,7 +163,7 @@
               <h3><strong>Question 8</strong></h3>
               <h5><i>You prefer hanging out with a close friend as opposed to going to a large party</i></h5>
               <select class='chosen-select' id='q8'>
-                <option value="" selected disabled hidden>Choose here</option>
+                <option selected>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -170,7 +176,7 @@
               <h3><strong>Question 9</strong></h3>
               <h5><i>You consider yourself an introvert</i></h5>
               <select class='chosen-select' id='q9'>
-                <option value="" selected disabled hidden>Choose here</option>
+                <option selected>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -183,7 +189,7 @@
               <h3><strong>Question 10</strong></h3>
               <h5><i>Whenever you go to your favorite restaurant you always order the same thing</i></h5>
               <select class='chosen-select' id='q10'>
-                <option value="" selected disabled hidden>Choose here</option>
+                <option selected>Choose here</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -213,24 +219,44 @@
 
   </div>
 
+  <div class="modal" id="results-modal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Best Match</h3>
+          <button type="button" class="close" onclick="location.reload()" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+        </div>
+        <div class="modal-body">
+          <h3 id="match-name"></h3>
+          <img id="match-img" src="https://cdn.mindful.org/smookler-friend.jpg" alt="No Valid Picture Found :(">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="location.reload()" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script type="text/javascript">
 
-    $(".submit").on("click", function (event) {
+    $(".submit").on("click", function(event) {
       event.preventDefault();
-      console.log('hello');
 
-      function formValidate() {
+      // Form validation
+      function validateForm() {
         var isValid = true;
-        console.log('hello');
-        $(".form-control").each(function () {
+        $(".form-control").each(function() {
           if ($(this).val() === "") {
             isValid = false;
           }
         });
 
-        $(".chosen-select").each(function () { // go through each question - if empty or choose here(default value) reject
+        $(".chosen-select").each(function() {
 
-          if ($(this).val() === "Choose here") {
+          if ($(this).val() === "" || $(this).val()=== 'Choose here') {
             isValid = false;
           }
         });
@@ -238,11 +264,12 @@
       }
 
       // If all required fields are filled
-      if (formValidate()) {
+      if (validateForm()) {
+        alert('Successfully submitted survey!')
         // Create an object for the user"s data
-        var newFriend = {
-          name: $("#survey-name").val().trim(),
-          photo: $("#survey-pic").val().trim(),
+        var userData = {
+          name: $("#survey-name").val(),
+          photo: $("#survey-pic").val(),
           scores: [
             $("#q1").val(),
             $("#q2").val(),
@@ -256,13 +283,13 @@
             $("#q10").val()
           ]
         };
-        alert('You successfully submitted your survey!');
+
         // AJAX post the data to the friends API.
-        $.post("/api/friends", newFriend, function (data) {
-          console.log(data);
+        $.post("/api/friends", userData, function(data) {
+
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           $("#match-name").text(data.name);
-          $("#match-img").attr("src", data.photo);
+          $("#match-img").attr("src", data.picture);
 
           // Show the modal with the best match
           $("#results-modal").modal("toggle");
@@ -271,23 +298,7 @@
       } else {
         alert("Please fill out all fields before submitting!");
       }
-            $("#survey-name").val('');
-            $("#survey-pic").val('')
-            $("#q1").val('');
-            $("#q2").val('');
-            $("#q3").val('');
-            $("#q4").val('');
-            $("#q5").val('');
-            $("#q6").val('');
-            $("#q7").val('');
-            $("#q8").val('');
-            $("#q9").val('');
-            $("#q10").val('');
-
-
-
     });
-
 
   </script>
 
@@ -295,3 +306,4 @@
 </body>
 
 </html>
+
